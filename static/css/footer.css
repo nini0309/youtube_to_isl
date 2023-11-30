@@ -1,0 +1,102 @@
+.footer-section{
+    background: url('../images/footer.jpeg');
+    background-size: 100% 100%;
+    height: 55vh;
+    display: flex;
+}
+
+.footer-about{
+    width: 50%;
+    padding: 2rem 4rem;
+}
+
+.footer-logo{
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.footer-logo img{
+    width: 70%;
+}
+
+.footer-para{
+    font-size: 1rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    color: #545454;
+    padding: 1rem;
+}
+
+.footer-links{
+    width: 30%;
+    padding: 2rem 4rem;
+    font-family: "Roboto Slab", serif;
+}
+
+.footer-links-heading{
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #363636;
+}
+
+.footer-links-list{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.footer-links-list ul{
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links-list ul li{
+    margin: 0.5rem;
+}
+
+.footer-links-list ul li a {
+    text-decoration: none;
+    color: #545454;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-links-list ul li a:hover{
+    color: #767676;
+}
+
+.footer-contacts{
+    padding: 2rem 4rem;
+    font-family: "Roboto Slab", serif;
+}
+
+.footer-contact-heading{
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #363636;
+}
+
+.footer-image img{
+    width: 5%;
+    margin-right: 0.5rem;
+}
+
+.footer-image{
+    display: flex;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    padding-left: 2rem;
+}
+
+.footer-image p{
+    color: #545454;
+}
+
+.footer-phone{
+    margin-top: 1.5rem;
+}

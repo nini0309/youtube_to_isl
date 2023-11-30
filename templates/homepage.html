@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shravya</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- navbar starts -->
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#"><img src="./images/logo.png" alt="Logo"></a>
+        </div>
+        <div class="other--links">
+            <ul>
+                <li><a class="others" href="#">HOME</a></li>
+                <li><div class="dropdown">
+                    <button class="dropbtn">CONVERT
+                        <img src="./images/down.png" id="down" alt="">
+                    </button>
+                    <div class="dropdown-content">
+                      <button><a href="{{ url_for('youtube') }}">YouTube to ISL</a></button>
+                      <button><a href="#">Audio To ISL</a></button>
+                      <button><a href="{{ url_for('index') }}">Text to ISL</a></button>
+                      <button><a href="{{ url_for('learn') }}">Learn ISL</a></button>
+                    </div>
+                  </div></li>
+            </ul>
+        </div>
+        <!-- <div class="donation"><a href="#">Donate Now</a></div> -->
+    </div>
+    <!-- navbar ends -->
+    <!-- swiper starts -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide first-slider">
+                <div class="swiper-slider">
+                    <div class="swipers">
+                        Convert YouTube Video to Indian Sign Language
+                        <div>
+                            <button>Click Here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide second-slider">
+                <div class="swiper-slider">
+                    <div class="swipers">
+                        Convert Audio to Indian Sign Language
+                        <div>
+                            <button>Click Here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide third-slider">
+                <div class="swiper-slider">
+                    <div class="swipers">
+                        Convert Text to Indian Sign Language
+                        <div>
+                            <button>Click Here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide fourth-slider">
+                <div class="swiper-slider">
+                    <div class="swipers">
+                        Learn Indian Sign Language
+                        <div>
+                            <button>Click Here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next" style="color: #EEEDE7;"></div>
+        <div class="swiper-button-prev" style="color: #EEEDE7;"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- swiper ends -->
+    <!-- causes starts -->
+    <div class="causes-section">
+        <div class="causes-heading-container">
+            <div class="causes-heading-sub-container">
+                <div class="causes-heading">
+                    Our <span style="color: #fc9f32;">Causes</span>
+                </div>
+            </div>
+        </div>
+        <div class="causes-cards-container">
+            <div class="causes-cards">
+                <div class="causes-image">
+                    <img src="./images/home/card-1.jpg" alt="">
+                </div>
+                <div class="causes-box">
+                    <div class="card-heading">
+                        Giving Deaf People Access to YouTube
+                    </div>
+                    <p>
+                        The importance of giving deaf people access to YouTube lies in ensuring inclusivity and equal opportunities. Accessible YouTube content allows deaf individuals to learn, enjoy entertainment, connect with communities, explore career options, advocate for awareness, learn languages, and independently access information. 
+                    </p>
+                </div>
+            </div>
+            <div class="causes-cards">
+                <div class="causes-image">
+                    <img src="./images/home/card-2.jpeg" id="second-card-image" alt="">
+                </div>
+                <div class="causes-box">
+                    <div class="card-heading">
+                        Bridging Gap Between Deaf and Non Deaf
+                    </div>
+                    <p>
+                        Bridging the gap between deaf and non-deaf individuals is important to create an inclusive society where everyone is understood and valued equally. It ensures equal opportunities, fosters understanding, breaks down stereotypes, and promotes effective communication for a more empathetic and equitable world.
+                    </p>
+                </div>
+            </div>
+            <div class="causes-cards">
+                <div class="causes-image">
+                    <img src="./images/home/learning.jpg" alt="">
+                </div>
+                <div class="causes-box">
+                    <div class="card-heading">
+                        Teaching Indian Sign Language
+                    </div>
+                    <p>
+                        Learning Indian Sign Language (ISL) is vital for inclusive communication with deaf individuals in India, promoting equal participation, and facilitating meaningful interactions with the deaf community. It fosters empathy and understanding of the experiences and challenges faced by deaf individuals, leading to a more compassionate society.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- causes ends -->
+    <!-- footer starts -->
+    <div class="footer-section">
+        <div class="footer-about">
+            <div class="footer-logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+            <div class="footer-para">
+                Shravya is an innovative website designed to bridge communication gaps and promote inclusivity by converting various forms of content into Indian Sign Language (ISL). This pioneering platform aims to cater to the needs of the deaf and hard-of-hearing community, offering them equal access to information, entertainment, and educational content. Shravya is committed to making digital content more accessible, enhancing communication, and fostering a more inclusive digital landscape in India.
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-links-heading">
+                Other Links
+            </div>
+            <div class="footer-links-list">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('youtube') }}">YouTube to ISL</a></li>
+                    <li><a href="#">Audio to ISL</a></li>
+                    <li><a href="{{ url_for('index') }}">Text to ISL</a></li>
+                    <li><a href="{{ url_for('learn') }}">Learn ISL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-contacts">
+            <div class="footer-contact-heading">
+                Contact Us
+            </div>
+            <div class="contact-container">
+                <div class="footer-phone footer-image">
+                    <img src="./images/mobile.png" alt="Mobile Phone">
+                    <p>Phone : +91 1234567990</p>
+                </div>
+                <div class="footer-email footer-image">
+                    <img src="./images/mail.png" alt="Email">
+                    <p>Email : abs@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer ends -->
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

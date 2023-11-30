@@ -166,7 +166,10 @@ def remove_punct(word_list):
 		for i,(word,word_detailed) in enumerate(zip(words,words_detailed)):
 			if(word_detailed.upos=='PUNCT'):
 				del words_detailed[i];
-				words.remove(word_detailed.text);
+				try:
+					words.remove(word_detailed.text);
+				except ValueError:
+					pass
 				break;
 
 
@@ -364,6 +367,10 @@ def clear_all():
 # dict for sending data to front end in json
 final_words_dict = {};
 
+@app.route('/home',methods=['GET'])
+def home():
+	return render_template('homepage.html')
+
 @app.route('/',methods=['GET'])
 def index():
 	clear_all();
@@ -374,6 +381,10 @@ def youtube():
 	clear_all();
 	return render_template('youtube.html')
 
+@app.route('/learn',methods=['GET'])
+def learn():
+	clear_all();
+	return render_template('learn.html')
 
 @app.route('/',methods=['GET','POST'])
 def flask_test():

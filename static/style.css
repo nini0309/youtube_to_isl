@@ -1,5 +1,12 @@
+.yt_video
+{
+    display: flex;
+    flex-direction: row;
+}
+
 .container
 {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,8 +15,10 @@
 
 
 }
+
 .player
 {
+    margin: 20px;
     width: 25rem;
     height: 30rem;
     border: 3px solid black;

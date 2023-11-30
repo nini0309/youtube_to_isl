@@ -68,6 +68,7 @@
                   convert_json_to_arr(res);
                   play_each_word();
                   display_isl_text(res);
+                  display_video();
                 },
                 error: function(xhr)
                 {
@@ -76,10 +77,18 @@
             });
         });
       
-      
+      function display_video()
+      {
+        let input =  document.getElementById('text').value;
+          let video =  document.getElementById('video');
+          let id = youtube_parser(input)
+          video.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&mute=1";
+          console.log("INPUT is ",input);
+      }
         // displays isl text 
       function display_isl_text(words)
         {
+          
             let p = document.getElementById("isl_text");
             p.textContent="";
             Object.keys(words).forEach(function(key) 
@@ -87,6 +96,11 @@
               p.textContent+= words[key]+" ";
             });
         }
+        function youtube_parser(url){
+          var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+          var match = url.match(regExp);
+          return (match&&match[7].length==11)? match[7] : false;
+      }
       // displays currently playing word/letter
         function display_curr_word(word)
         {
