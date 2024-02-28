@@ -18,6 +18,7 @@ def clean_text(text):
 def get_youtube_transcript(video_id):
     try:
         transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        print(transcript)
         text = ""
         for entry in transcript:
             text += entry['text'] + ' '

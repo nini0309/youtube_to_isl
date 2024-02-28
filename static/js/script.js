@@ -13,29 +13,86 @@ $('input').on('keypress', function (e) {
 var wordArrayJson=[];
 // makes a li for available words in signFiles
 
-function test_list()
-{
-    
-    let ul = document.querySelector(".test_list");
-    fetch('static/js/sigmlFiles.json')
-    .then(response => response.json())
-     .then((data)=>
-     {
-         data.forEach((e)=>
-         {
-            // let word = e.name;
-            let tempjson = {word:e.name};
-            wordArrayJson.push(tempjson);
-             let li=document.createElement("li");
-            //  li.appendChild(document.createTextNode(e.name));
-            li.innerHTML=`<a href="#player" onclick="setSiGMLURL('SignFiles/${e.name}.sigml');" > ${e.name}</a>`
-            ul.appendChild(li);
-            // console.log(e.name);
-         });
-     });
+document.addEventListener("DOMContentLoaded", function() {
+  test_list();
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+  function startsWithNumber(str) {
+    return /^\d/.test(str);
+  }
+
+  function test_list() {
+    let ul = document.querySelector(".numericDigits");
+
+    console.log("test_list function is called");
+
+    fetch('static/js/sigmlFiles.json')
+      .then(response => response.json())
+      .then((data) => {
+        console.log("Fetched data:", data);
+
+        data.forEach((e) => {
+          console.log("Processing:", e.name);
+
+          if (startsWithNumber(e.name)) {
+            console.log("Creating button for:", e.name);
+
+            let button = document.createElement("button");
+            let li = document.createElement("li");
+
+            button.innerHTML = `<a href="#player" onclick="setSiGMLURL('SignFiles/${e.name}.sigml');">${e.name}</a>`;
+            li.appendChild(button);
+            ul.appendChild(li);
+          }
+        });
+      })
+      .catch(error => {
+        console.error("Error fetching JSON:", error);
+      });
+  }
+
+  test_list();
+});
+
+function generateContent(word) {
+  return `<a href="#player" onclick="setSiGMLURL('SignFiles/${word}.sigml');">${word}</a>`;
 }
-test_list();
+
+async function generateAlphabetList(className) {
+  try {
+      const ul = document.querySelector(`.${className}`);
+      const response = await fetch('static/js/sigmlFiles.json');
+      const data = await response.json();
+
+      data.forEach((e) => {
+          if (e.name.toLowerCase().startsWith(className.toLowerCase())) {
+              const li = document.createElement("li");
+              const button = document.createElement("button");
+              button.innerHTML = generateContent(e.name);
+              ul.appendChild(li);
+              li.appendChild(button)
+          }
+      });
+  } catch (error) {
+      console.error('Error fetching or processing data:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  // Get the accordion container
+  const accordionContainer = document.getElementById('alphabetAccordion');
+
+  // Generate accordion items for each letter
+  for (let i = 65; i <= 90; i++) {
+      const letter = String.fromCharCode(i);
+      const accordionItem = generateAccordionItem(letter);
+      accordionContainer.innerHTML += accordionItem;
+
+      // Example usage for each letter, appending to the corresponding accordion item
+      await generateAlphabetList(letter);
+  }
+});
 
 // word array for playing words
 var wordArray=[];

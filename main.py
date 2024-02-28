@@ -16,9 +16,10 @@ import time
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
-from flask import Flask,request,render_template,send_from_directory,jsonify
+from flask import Flask,request,render_template,send_from_directory,jsonify, flash
 
 app =Flask(__name__,static_folder='static', static_url_path='')
+app.secret_key = "VatsalParsaniya"
 
 import stanza
 # from stanza.server import CoreNLPClient
@@ -102,7 +103,7 @@ en_nlp = stanza.Pipeline('en',processors={'tokenize':'spacy'})
 # stop words that are not to be included in ISL
 stop_words = set(["am","are","is","was","were","be","being","been","have","has","had",
 					"does","did","could","should","would","can","shall","will","may",
-					"might","must","let", 'for', 'of', 'an', 'the', 'having'])
+					"might","must","let", 'for', 'of', 'an', 'the', 'having', 'to', 'and', 'or'])
 
 
 
@@ -386,6 +387,11 @@ def learn():
 	clear_all();
 	return render_template('learn.html')
 
+@app.route('/audio_to_text',methods=['GET'])
+def audio_to_text():
+	clear_all()
+	return render_template('audio.html')
+
 @app.route('/',methods=['GET','POST'])
 def flask_test():
 	clear_all();
@@ -394,6 +400,25 @@ def flask_test():
 	if(text==""):
 		return "";
 	take_input(text)
+
+	# fills the json 
+	for words in final_output_in_sent:
+		for i,word in enumerate(words,start=1):
+			final_words_dict[i]=word;
+
+	print("---------------Final words dict--------------");
+	print(final_words_dict)
+
+	return final_words_dict;
+
+@app.route('/audio_to_text',methods=['GET','POST'])
+def audio_test():
+	clear_all();
+	text = request.form.get('text') #gets the text data from input field of front end
+	print("text is", text)
+	if(text==""):
+		return "";
+	take_input(youtube.clean_text(text))
 
 	# fills the json 
 	for words in final_output_in_sent:
@@ -438,3 +463,5 @@ def serve_signfiles(path):
 
 if __name__=="__main__":
 	app.run(debug=True)
+
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'

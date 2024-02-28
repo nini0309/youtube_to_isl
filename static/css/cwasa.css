@@ -1,83 +1,133 @@
-html, body {
+.divAv{
+    height: 50vh;
+    border-radius: 10px;
+    border: 2px solid #fef9f7;
     background-color: white;
-	margin: 0px;
-	/*overflow: hidden;*/
-	width: 100%;
-	height: 100%;
+    /* text-align: center; */
+    /* position: relative; */
 }
 
-h3, h4 {
-    color: #00A;  margin: 2px;  margin-top: 2px;
-    /*-webkit-margin-before: 0.4em;*/
-    /*-webkit-margin-after:  0.04em;*/
+.canvasAv{
+    height: 100%;
 }
 
-.txtFPS, .txtLogSpeed {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
-	text-align: center;  color: #E33;  width: 3em;
-}
-.txtSF {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
-	text-align: center;  color: #E33;  width: 4em;
-}
-.txtGloss {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
-	text-align: center;  color: #E33;  width: 10em;
+.CWASASpeed{
+    float: right;
+    width: fit-content;
+    margin-top: 4%;
+    margin-bottom: 0;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
-.canvasAv {
-	position: absolute; left: 0px; top: 0px;
-	width: 100%; height: 100%;
+.txtLogSpeed{
+    width: 12%;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #363636;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-.divCtrlPanel {
-	position: relative;
-    margin: 0px; border: 1px solid; padding: 1ex;
+.bttnSpeedDown{
+    float: left;
+    margin-left: 55%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #363636;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-.divAv {
-	text-align: center; 
-	position: relative; background: #A3B8D2;
-	width: 100%; height: 100%; 
-	margin: 0px; border: 1px solid; padding: 0px;
+.bttnSpeedUp{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #363636;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-.CWASAAvatar {
-	text-align: center; 
-	position: relative; background: #A3B8D2;
-	width: 100%; height: 100%; 
-	margin: 0px; border: 0px; padding: 0px;
+
+.bttnSpeedReset{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #363636;
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 3%;
 }
 
-.CWASAGUI {
-	text-align: center; 
-	position: relative; 
-	margin: 0px; border: 0px; padding: 0px;
+.bttnPlaySiGMLURL{
+    float: left;
+    margin-top: 3%;
+    margin-bottom: 0;
+    margin-left: 3%;
+    width: 10%;
+    border-radius: 5px;
+    padding: 0.5%;
+    outline: none;
+    background-color: #fc9f32;
+    color: #fef9f7;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
 }
 
-.txtaSiGMLText {
-    font-family: monospace;  font-size: 0.9em; width: 306px;
+.bttnStop{
+    float: left;
+    margin-top: 3%;
+    margin-bottom: 0;
+    margin-left: 1.5%;
+    width: 10%;
+    border-radius: 5px;
+    padding: 0.5%;
+    outline: none;
+    background-color: #363636;
+    color: #fef9f7;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
 }
 
-.txtSiGMLURL {
-    font-family: sans-serif;  font-size: 0.9em;  width: 24em;
+.avatarChoice{
+    text-align: center;
+    padding: 3rem;
 }
 
-.statusExtra {
-    font-family: sans-serif;  font-size: 0.8em;  width: 24em;
+.avatarText{
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #fc9f32;
+    margin-right: 1.5rem;
 }
 
-.spanInfo {
-	font-size: 90%;
+.menuAv{
+    border: none;
+    outline: none;
+    background-color: white;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #363636;
+    cursor: pointer;
+    margin: 0;
 }
 
-.stocApplet { visibility: hidden;  height: 1px; }
-
-.menuAv {
-    font-family: sans-serif;  font-size: 0.9em;  width: 6em;
+.menuAv option{
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.3rem;
 }
-
-.displayed { }
-.undisplayed { display: none; }
-
-/*--------*/

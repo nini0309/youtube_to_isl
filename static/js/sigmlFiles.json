@@ -4248,5 +4248,10 @@
       "fileName": "zoo.sigml", 
       "name": "zoo", 
       "sid": 432
+   },
+   {
+      "fileName": "hi.sigml", 
+      "name": "hi", 
+      "sid": 888
    }
 ]

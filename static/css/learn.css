@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap");
+/* font-family: "Roboto Slab", serif; */
+    /* font-weight: 700; */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.learnContainerMain{
+    display: flex;
+}
+.learnWordContainer {
+    width: 50%;
+    max-height: 100vh; /* Set a specific pixel height */
+    overflow-y: auto;
+}
+.test_word_list {
+    padding: 0;
+    margin: 0;
+}
+.testSpan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.testSpan span{
+    color: #fc9f32;
+    margin-left: 0.5rem;
+}
+.learnWordsGrid {
+    width: 100%;
+    max-height: 100%; /* Adjust as needed */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    list-style: none;
+    margin: 0;
+}
+.learnWordsGrid li button{
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.learnWordsGrid li button a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    width: 100%;
+}
+
+.accordion-button:focus {
+    border-color: black;
+    box-shadow: 0 0 0 0.2rem #f9d9cc; 
+}
+
+.accordion-button{
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #363636;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f9d9cc;
+    color: #363636;
+}
+
+.accordion-body{
+    padding: 0;
+}
